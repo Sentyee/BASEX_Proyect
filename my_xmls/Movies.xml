@@ -1,0 +1,32 @@
+<movies>
+    <movie>
+        <id>1</id>
+        <name>Gone With The Wind</name>
+        <year>1939</year>
+        <boxOffice>$400 Million</boxOffice>
+    </movie>
+    <movie>
+        <id>2</id>
+        <name>Mad Max: Fury Road</name>
+        <year>2015</year>
+        <boxOffice>	$375.2 Million</boxOffice>
+    </movie>
+    <movie>
+        <id>3</id>
+        <name>Joker</name>
+        <year>2019</year>
+        <boxOffice>$1 Billion</boxOffice>
+    </movie>
+    <movie>
+        <id>4</id>
+        <name>Full Metal Jacket</name>
+        <year>1987</year>
+        <boxOffice>$120 Million</boxOffice>
+    </movie>
+    <movie>
+        <id>5</id>
+        <name>The Dark Knight</name>
+        <year>2008</year>
+        <boxOffice>$1 Billion</boxOffice>
+    </movie>
+</movies>

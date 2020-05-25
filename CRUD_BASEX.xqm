@@ -2,7 +2,7 @@ module namespace page = 'http://pepillo.com';
 
 declare
   %rest:POST
-  %rest:path('/phones')
+  %rest:path('/movies')
   %output:method('html')
   %output:doctype-system('about:legacy-compat')
 function page:home(
@@ -34,7 +34,7 @@ function page:home(
 
 declare
   %rest:POST
-  %rest:path('/phone')
+  %rest:path('/movie')
   %rest:form-param('phoneid','{$phoneid}','(nophoneid)')
   %output:method('html')
   %output:doctype-system('about:legacy-compat')
@@ -75,7 +75,7 @@ function page:form(
 
 declare
   %rest:DELETE
-  %rest:path('/phone/delete')
+  %rest:path('/movie/delete')
   %rest:form-param('phoneid','{$phoneid}','(nophoneid)')
   %output:method('html')
   %output:doctype-system('about:legacy-compat')
@@ -85,20 +85,4 @@ updating function page:delete(
     for $phone in doc("phones")//phone
     where $phone/phoneid/text() = $phoneid
     return delete node $phone
-};
-
-
-declare
-  %rest:POST
-  %rest:path('/phone/modify')
-  %rest:form-param('phoneid','{$phoneid}','(nophoneid)')
-  %output:method('html')
-  %output:doctype-system('about:legacy-compat')
-updating function page:Modify(
-    $phoneid as xs:string
-) {
-    db:output(<rest:forward>/alumnos</rest:forward>),
-    for $x in doc("phones")//phone
-    where $x/phoneid/text() = $phoneid
-    return replace node $x with
 };

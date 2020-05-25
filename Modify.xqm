@@ -65,9 +65,25 @@ function page:form(
             </div>
         }
             <input type="hide" value="{$phoneid}" name="phoneid"/>
-            <button type="submit">Delete</button>
+            <button type="submit">Modify</button>
         </form>
         </div>
     </body>
   </html>
+};
+
+
+declare
+  %rest:POST
+  %rest:path('/phone/modify')
+  %rest:form-param('phoneid','{$phoneid}','(nophoneid)')
+  %output:method('html')
+  %output:doctype-system('about:legacy-compat')
+updating function page:Modify(
+    $phoneid as xs:string
+) {
+    db:output(<rest:forward>/alumnos</rest:forward>),
+    for $x in doc("phones")//phone
+    where $x/phoneid/text() = $phoneid
+    return replace node $x with
 };

@@ -65,7 +65,7 @@ function page:form(
             </div>
         }
             <input type="hide" value="{$phoneid}" name="phoneid"/>
-            <button type="submit">Delete</button>
+            <button type="submit">Add</button>
         </form>
         </div>
     </body>
